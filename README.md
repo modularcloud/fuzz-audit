@@ -10,7 +10,11 @@ Randomly select a location in your codebase and audit the surrounding code. Surf
 npm install -g fuzz-audit
 ```
 
-### [skill.sh](https://skill.sh/modularcloud/fuzz-audit)
+### skill.sh
+
+```bash
+npx skills.sh install modularcloud/fuzz-audit
+```
 
 ### Claude Code skill
 
