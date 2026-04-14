@@ -13,7 +13,7 @@ npm install -g fuzz-audit
 ### skill.sh
 
 ```bash
-npx skills.sh install modularcloud/fuzz-audit
+npx skills add modularcloud/fuzz-audit
 ```
 
 ### Claude Code skill
