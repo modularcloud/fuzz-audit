@@ -13,18 +13,18 @@ Randomly select a location in the codebase and deeply audit the code around it. 
 
 ## Step 1: Pick a random code location
 
-Run the selector scripts from this skill's parent repo. They must be available at the repo root or on PATH.
+Use the `fuzz-audit` CLI. It must be installed globally (`npm install -g fuzz-audit`) or available on PATH.
 
 ```bash
-random-file.sh .
+fuzz-audit file .
 ```
 
-This returns a file path. Check if the file is source code (e.g., `.ts`, `.js`, `.py`, `.go`, `.rs`, `.java`, `.rb`, `.c`, `.cpp`, `.sh`, `.swift`, `.kt`, `.scala`, `.ex`, `.clj`, `.cs`, `.php`, `.lua`, `.zig`, `.ml`, `.hs`). If it's not code (config, JSON, markdown, images, lock files, etc.), run `random-file.sh` again until you get a code file. Cap retries at 10 — if the codebase has very few code files, report that and stop.
+This returns a file path. Check if the file is source code (e.g., `.ts`, `.js`, `.py`, `.go`, `.rs`, `.java`, `.rb`, `.c`, `.cpp`, `.sh`, `.swift`, `.kt`, `.scala`, `.ex`, `.clj`, `.cs`, `.php`, `.lua`, `.zig`, `.ml`, `.hs`). If it's not code (config, JSON, markdown, images, lock files, etc.), run `fuzz-audit file` again until you get a code file. Cap retries at 10 — if the codebase has very few code files, report that and stop.
 
 Once you have a code file, pick a random line:
 
 ```bash
-random-line.sh <file>
+fuzz-audit line <file>
 ```
 
 This returns `<line_number>:<content>`. If the line is blank or a comment, run it again (up to 5 retries) to land on actual code.

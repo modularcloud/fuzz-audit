@@ -1,0 +1,25 @@
+{
+  "name": "fuzz-audit",
+  "version": "1.0.0",
+  "description": "Randomly select a location in your codebase and audit the surrounding code",
+  "bin": {
+    "fuzz-audit": "./bin/fuzz-audit.js"
+  },
+  "files": [
+    "bin/",
+    "fuzz-audit/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/modularcloud/fuzz-audit.git"
+  },
+  "keywords": [
+    "fuzz",
+    "audit",
+    "code-review",
+    "claude-code",
+    "random",
+    "review"
+  ],
+  "license": "MIT"
+}

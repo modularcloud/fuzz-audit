@@ -2,23 +2,32 @@
 
 Randomly select a location in your codebase and audit the surrounding code. Surfaces bugs, missing tests, documentation drift, and improvement opportunities that hide in code nobody's looked at in a while.
 
-## Setup
+## Install
 
-1. Copy `random-file.sh` and `random-line.sh` to the root of your repo:
+### npm
 
 ```bash
-curl -O https://raw.githubusercontent.com/modularcloud/fuzz-audit/main/random-file.sh
-curl -O https://raw.githubusercontent.com/modularcloud/fuzz-audit/main/random-line.sh
-chmod +x random-file.sh random-line.sh
+npm install -g fuzz-audit
 ```
 
-2. Install the Claude Code skill:
+### [skill.sh](https://skill.sh/modularcloud/fuzz-audit)
+
+### Claude Code skill
 
 ```bash
 claude skill install --from https://github.com/modularcloud/fuzz-audit fuzz-audit
 ```
 
-3. Run it:
+## CLI
+
+```
+fuzz-audit file [dir]    Pick a random git-tracked file
+fuzz-audit line <file>   Pick a random line from a file
+```
+
+## Usage
+
+Run the skill in Claude Code:
 
 ```
 /fuzz-audit
@@ -26,8 +35,8 @@ claude skill install --from https://github.com/modularcloud/fuzz-audit fuzz-audi
 
 ## What it does
 
-1. Picks a random code file using `random-file.sh` (respects `.gitignore`, skips dotfiles)
-2. Picks a random line in that file using `random-line.sh`
+1. Picks a random code file (respects `.gitignore`)
+2. Picks a random line in that file
 3. Identifies the function/method containing that line
 4. Audits the code for:
    - Implementation bugs and security issues
@@ -39,7 +48,7 @@ claude skill install --from https://github.com/modularcloud/fuzz-audit fuzz-audi
 
 ## Requirements
 
-- Bash
+- Node.js >= 18
 - Git
 - [GitHub CLI](https://cli.github.com/) (`gh`) for issue creation
-- [Claude Code](https://claude.ai/claude-code)
+- [Claude Code](https://claude.ai/claude-code) for the audit skill
