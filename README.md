@@ -27,6 +27,7 @@ claude skill install --from https://github.com/modularcloud/fuzz-audit fuzz-audi
 ```
 fuzz-audit file [dir]    Pick a random git-tracked file
 fuzz-audit line <file>   Pick a random line from a file
+fuzz-audit prompt        Print the fuzz-audit skill prompt
 ```
 
 ## Usage
