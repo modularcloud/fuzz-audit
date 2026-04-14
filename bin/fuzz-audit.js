@@ -17,11 +17,15 @@ switch (command) {
     }
     randomLine(args[0]);
     break;
+  case "prompt":
+    console.log(readFileSync(join(__dirname, "..", "fuzz-audit", "SKILL.md"), "utf8"));
+    break;
   default:
     console.log("Usage: fuzz-audit <command> [args]\n");
     console.log("Commands:");
     console.log("  file [dir]    Pick a random git-tracked file");
     console.log("  line <file>   Pick a random line from a file");
+    console.log("  prompt        Print the fuzz-audit skill prompt");
     process.exit(command ? 1 : 0);
 }
 
